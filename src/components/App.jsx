@@ -3,6 +3,7 @@ import { ContactsForm } from './ContactsForm/ContactsForm';
 import { ContactsList } from './ContactsList/ContactsList';
 import initialContacts from '../data.json';
 import { GlobalStyle } from './GlobalStyle';
+import { Filter } from './Filter/Filter';
 
 export class App extends Component {
   state = {
@@ -20,7 +21,7 @@ export class App extends Component {
         contacts: [...prevState.contacts, newContact],
       };
     });
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   getFilteredContacts = () => {
@@ -30,6 +31,11 @@ export class App extends Component {
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
+
+  changeFilter = event => {
+    this.setState({ filter: event.target.value });
+  };
+
   render() {
     const filteredContacts = this.getFilteredContacts();
     return (
@@ -37,8 +43,8 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactsForm onAdd={this.addContact} />
         <h2>Contacts</h2>
+        <Filter value={this.state.value} onChange={this.changeFilter} />
         <ContactsList contacts={filteredContacts} />
-
         <GlobalStyle />
       </>
     );
