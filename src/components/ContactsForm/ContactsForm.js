@@ -1,5 +1,10 @@
 import { Formik } from 'formik';
-import { StyledForm, StyledField, StyledError } from './ContactsForm.styled';
+import {
+  StyledForm,
+  StyledField,
+  StyledError,
+  AddBtn,
+} from './ContactsForm.styled';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 
@@ -37,7 +42,7 @@ export const ContactsForm = ({ onAdd }) => {
           type="number"
         />
         <StyledError name="number" component="div" />
-        <button type="submit">Add contact</button>
+        <AddBtn type="submit">Add contact</AddBtn>
       </StyledForm>
     </Formik>
   );

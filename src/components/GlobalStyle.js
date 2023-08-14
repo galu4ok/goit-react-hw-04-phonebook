@@ -21,13 +21,13 @@ h3,
 h4,
 p {
   margin: 0;
-  }
+  padding: 20;
+}
 
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
-}
+  }
 
 a {
   display: block;
@@ -47,11 +47,9 @@ img {
 #root {
   margin: 30px;
   background-color: #fae7b5;
-  background-size: 100%;
-   
-  width: 470px;
+  width: 450px;
+  padding:30px;
   display: block;
-  padding: 30px;
   border-radius: 8px;
   box-shadow: 1px 1px 8px 0px #000000;  
 }
