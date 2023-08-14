@@ -49,7 +49,7 @@ img {
   background-color: #fae7b5;
   background-size: 100%;
    
-  width: 600px;
+  width: 470px;
   display: block;
   padding: 30px;
   border-radius: 8px;
