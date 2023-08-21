@@ -12,7 +12,7 @@ const schema = Yup.object().shape({
   name: Yup.string().required(
     '*The field cannot be empty!Please enter the name'
   ),
-  number: Yup.number().required(
+  number: Yup.string().required(
     '*The field cannot be empty!Please enter the number'
   ),
 });
@@ -39,7 +39,6 @@ export const ContactsForm = ({ onAdd }) => {
           id="number"
           name="number"
           placeholder="Enter phone number"
-          type="number"
         />
         <StyledError name="number" component="div" />
         <AddBtn type="submit">Add contact</AddBtn>

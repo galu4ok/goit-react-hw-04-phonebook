@@ -5,11 +5,29 @@ import initialContacts from '../data.json';
 import { GlobalStyle } from './GlobalStyle';
 import { Filter } from './Filter/Filter';
 
+const localeStorageKey = 'phonebook-contacts';
 export class App extends Component {
   state = {
     contacts: initialContacts,
     filter: '',
   };
+
+  componentDidMount() {
+    const savedContacts = localStorage.getItem(localeStorageKey);
+    if (savedContacts !== null) {
+      // this.setState({ contacts: initialContacts });
+      this.setState({ contacts: JSON.parse(savedContacts) });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { contacts: prevContacts } = prevState;
+    const { contacts: nextContacts } = this.state;
+
+    if (prevContacts !== nextContacts) {
+      localStorage.setItem(localeStorageKey, JSON.stringify(nextContacts));
+    }
+  }
 
   addContact = newContact => {
     if (this.state.contacts.find(contact => contact.name === newContact.name)) {
@@ -21,7 +39,6 @@ export class App extends Component {
         contacts: [...prevState.contacts, newContact],
       };
     });
-    // console.log(this.state);
   };
 
   getFilteredContacts = () => {
