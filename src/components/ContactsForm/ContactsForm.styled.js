@@ -5,11 +5,11 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 20px;
 `;
 export const StyledField = styled(Field)`
   padding: 5px;
   border: 1px solid grey;
+  border-radius: 5px;
 `;
 
 export const StyledError = styled(ErrorMessage)`
@@ -18,10 +18,12 @@ export const StyledError = styled(ErrorMessage)`
   color: tomato;
 `;
 export const AddBtn = styled.button`
-  width: 150px;
+  width: 120px;
   height: 30px;
   color: black;
   border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 20px;
 
   &:hover {
     background-color: teal;

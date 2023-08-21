@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
-export const Search = styled.div`
-  input {
-    margin: 30px;
-    width: 400px;
-    border-radius: 5px;
-    text-align: center;
-    padding: 5px;
-  }
+export const FilterInput = styled.input`
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 220px;
 `;

@@ -2,11 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 50px;
+  /* gap: 20px; */
   align-items: center;
-  text-align: counter;
-  margin: 10px;
 `;
 
 export const Text = styled.p`
@@ -17,17 +14,21 @@ export const Text = styled.p`
 
 export const SpanText = styled.span`
   font-weight: 500;
-  padding-left: 20px;
+  padding-left: 15px;
 `;
 export const DeleteBtn = styled.button`
+  position: absolute;
   font-size: 14px;
   border: none;
   outline: none;
-  padding: 10px;
+  padding: 5px;
+  border: 1px solid grey;
   border-radius: 5px;
+  margin-left: 380px;
+  width: 60px;
 
   &:hover {
-    background-color: #3d85c6;
+    background-color: teal;
     outline: teal;
     color: #ffffff;
   }
